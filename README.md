@@ -165,3 +165,4 @@ Este proyecto se distribuye bajo la licencia especificada en el archivo LICENSE.
 
 Este proyecto es únicamente con fines educativos y de investigación.
 No constituye asesoría financiera.
+No nos hacemos responsables si usted pierde dinero utilizando nuestros métodos.
