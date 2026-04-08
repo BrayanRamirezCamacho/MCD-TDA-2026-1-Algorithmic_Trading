@@ -36,7 +36,7 @@ Redes convolucionales aplicadas a series de tiempo
 Modelos híbridos
 
 
-📡 Feature Engineering
+📡 Ingeniería de Características
 Indicadores técnicos (RSI, MACD, Bollinger Bands)
 Variables exógenas (volumen, noticias, sentimiento)
 Transformaciones temporales
@@ -48,23 +48,84 @@ Extracción de características topológicas (Top-K persistence)
 Integración con modelos de Machine Learning y Deep Learning
 
 
-🏗️ Estructura del Proyecto
 
+🧪 MVP: Sistema Inicial de Trading Algorítmico
+
+Como parte del proyecto, se ha implementado un Producto Mínimo Viable (MVP) enfocado en validar ideas básicas de trading algorítmico.
+
+
+🔍 Objetivo del MVP
+
+Construir un pipeline funcional que permita:
+
+Cargar datos históricos de Bitcoin (OHLCV)
+Generar features básicas (EMA, RSI, volatilidad)
+Aplicar una estrategia rule-based simple
+Ejecutar un backtest básico
+Visualizar resultados (equity curve)
+
+
+⚙️ Estrategia Implementada (Baseline)
+
+Estrategia inicial basada en:
+
+Entrada (Compra):
+
+EMA20 > EMA50 (tendencia alcista)
+Precio por encima de EMA20
+RSI < 70
+
+Salida (Venta):
+
+EMA20 < EMA50
+RSI > 75
+Stop-loss (-2%)
+Take-profit (+4%)
+
+
+📂 Flujo del MVP
+Datos → Features → Señales → Backtest → Resultados → Visualización
+
+
+▶️ Ejecución del MVP
+make install
+make run
+
+O directamente:
+
+python -m src.run_mvp
+
+
+📊 Outputs generados
+
+data/processed/trades.csv → historial de operaciones
+data/processed/equity_curve.csv → evolución del capital
+reports/figures/equity_curve.png → gráfica del rendimiento
+
+
+🧠 Propósito dentro del proyecto
+
+El MVP sirve como:
+
+Base experimental para estrategias más avanzadas
+Punto de integración con modelos de ML/DL
+Plataforma inicial para futura integración con Freqtrade
+Validación de pipelines de datos y features
+
+
+🏗️ Estructura del Proyecto
 ├── data/
-│   ├── raw/            # Datos originales
-│   ├── interim/        # Datos intermedios
-│   └── processed/      # Datos listos para modelado
-│
-├── notebooks/          # Análisis exploratorio y experimentos
-│
+│   ├── raw/        # Datos originales
+│   ├── interim/    # Datos intermedios
+│   └── processed/  # Datos listos para modelado
+├── notebooks/      # Análisis exploratorio y experimentos
 ├── src/
 │   ├── data/           # Scripts de carga y procesamiento
 │   ├── features/       # Generación de variables
-│   ├── models/         # Entrenamiento y evaluación
+│   ├── models/         # Estrategias, entrenamiento y backtesting
 │   └── visualization/  # Gráficas y reportes
-│
-├── reports/            # Resultados y documentación
-├── requirements.txt    # Dependencias
+├── reports/        # Resultados y documentación
+├── requirements.txt
 ├── README.md
 └── .gitignore
 
@@ -85,6 +146,7 @@ pip install -r requirements.txt
 
 
 🚀 Uso del Proyecto
+
 1. Preparación de datos
 python src/data/make_dataset.py
 2. Generación de features
@@ -92,6 +154,24 @@ python src/features/build_features.py
 3. Entrenamiento de modelos
 python src/models/train_model.py
 4. Evaluación
+
+Preparación de datos:
+
+python src/data/make_dataset.py
+
+
+Generación de features:
+
+python src/features/build_features.py
+
+
+Entrenamiento de modelos:
+
+python src/models/train_model.py
+
+
+Evaluación:
+
 python src/models/evaluate_model.py
 
 
@@ -109,26 +189,30 @@ Backtesting financiero (cuando aplica)
 
 Este es un proyecto colaborativo. Para contribuir:
 
-Crear una rama:
+1. Crear una rama
 git checkout -b feature/nueva-funcionalidad
 
-Realizar cambios y commit:
+2. Realizar cambios
+git add .
 git commit -m "Descripción del cambio"
 
-Hacer push:
+3. Sincronizar con main
+git pull origin main --rebase
+
+4. Subir cambios
 git push origin feature/nueva-funcionalidad
 
-Crear un Pull Request
+5. Crear Pull Request
 Ir al repositorio en GitHub
-Verás un botón "Compare & pull request" → hacer clic
-Verificar que:
-base: main (o develop)
-compare: tu rama (feature/...)
+Clic en "Compare & pull request"
+Verificar:
+base: main
+compare: tu rama
 Escribir:
-Título claro
-Descripción de los cambios realizados
-(Opcional) Referencia a issues
-Hacer clic en "Create pull request"
+título claro
+descripción de cambios
+Clic en "Create pull request"
+
 
 📌 Buenas Prácticas
 Mantener notebooks limpios y documentados
@@ -144,11 +228,13 @@ Implementación de bots de trading (ej. Freqtrade)
 Modelos basados en Transformers
 Análisis de sentimiento (NLP + noticias)
 Optimización de portafolios
+Integración avanzada con TDA + Deep Learning
 
 
 👥 Equipo
 
-Proyecto desarrollado por estudiantes de la Maestría en Ciencia de Datos.
+Proyecto desarrollado por estudiantes de la Maestría en Ciencia de Datos:
+
 Brayan Ramírez
 Isaul Tirado
 Kevin Galván
