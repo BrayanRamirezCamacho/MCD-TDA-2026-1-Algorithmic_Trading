@@ -1,7 +1,27 @@
-#📈 Predicción de Precios de Bitcoin con Ciencia de Datos
+# 📈 Predicción de Precios de Bitcoin y Trading Algorítmico
+### 🚀 Proyecto de Ciencia de Datos | Maestría en Ciencia de Datos
 
 Proyecto colaborativo desarrollado en el contexto de la Maestría en Ciencia de Datos de la Universidad de Sonora, enfocado en la construcción, evaluación y comparación de modelos para la predicción de precios de Bitcoin utilizando técnicas de análisis de series de tiempo, Machine Learning, Deep Learning y Análisis Topológico de Datos.
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Made with](https://img.shields.io/badge/Made%20with-ML%20%26%20TDA-purple)
+
+---
+
+## 🧠 Overview
+
+Este proyecto desarrolla un sistema completo de **predicción de precios de Bitcoin** combinando:
+
+- 📊 Series de tiempo
+- 🤖 Machine Learning
+- 🧬 Deep Learning
+- 🧩 Análisis Topológico de Datos (TDA)
+
+El objetivo no es solo predecir precios, sino **construir una base para estrategias de trading algorítmico con TDA**.
+
+---
 
 ##🎯 Objetivo del Proyecto
 
