@@ -1,6 +1,6 @@
 services:
   freqtrade:
-    image: freqtradeorg/freqtrade:stable
+    image: freqtradeorg/freqtrade:stable_plot
     restart: unless-stopped
     volumes:
       - ./user_data:/freqtrade/user_data
