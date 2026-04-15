@@ -1,2 +1,0 @@
-cd #cambiar direccion
-pwd #checar tu ubicacion del archivo
