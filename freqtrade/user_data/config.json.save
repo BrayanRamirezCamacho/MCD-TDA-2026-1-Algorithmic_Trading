@@ -1,0 +1,82 @@
+
+{
+    "$schema": "https://schema.freqtrade.io/schema.json",
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": 50,
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "USD",
+    "dry_run": true,
+    "dry_run_wallet": 1000,
+    "cancel_open_orders_on_exit": false,
+    "trading_mode": "spot",
+    "margin_mode": "",
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 10,
+        "exit_timeout_count": 0,
+        "unit": "minutes"
+    },
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1,
+        "price_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "2sGE6SZNLhwzfFXTgTjonzwLSrMGpjlyrNpuhiLPpdoshhUsqYgPwCgke7Muf6rO",
+        "secret": "2sGE6SZNLhwzfFXTgTjonzwLSrMGpjlyrNpuhiLPpdoshhUsqYgPwCgke7Muf6rO",
+        "ccxt_config": {
+		"verify" : false
+			},
+        "ccxt_async_config": {
+		"verify" : false
+			},
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT",
+            "SOL/USDT"
+        ],
+        "pair_blacklist": [
+            "BNB/USDT"
+        ]
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList",
+        }
+    ],
+    "telegram": {
+        "enabled": true,
+        "token": "8722265774:AAHayDr5t2o2_7uitNoUtHLZ8cUgPtalTGk",
+        "chat_id": "-5086563289"
+    },
+    "api_server": {
+        "enabled": false,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "ddd7e9e8899d7a105958fd7cf8ce2f675e8e3d8c8507755dc0b0eb30f53f6e0e",
+        "ws_token": "X5G_wwaCVWzij9Lc6Gg9tUf6bk4q41ZjrA",
+        "CORS_origins": [],
+        "username": "",
+        "password": ""
+    },
+    "bot_name": "freqtrade",
+    "initial_state": "running",
+    "force_entry_enable": false,
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}
